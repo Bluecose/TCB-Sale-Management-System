@@ -1,0 +1,51 @@
+======================================
+Customer: Customer 1
+Rice - 50 BDT
+Suger - 80 BDT
+Oil - 120 BDT
+Salt - 30 BDT
+Egg - 120 BDT
+Potato - 120 BDT
+Onion - 120 BDT
+Lentil - 120 BDT
+
+Total: 760 BDT
+Cash Paid: 760 BDT
+Return: 0 BDT
+======================================
+
+======================================
+Customer: Customer 1
+Rice - 50 BDT
+Suger - 80 BDT
+Oil - 120 BDT
+Salt - 30 BDT
+Egg - 120 BDT
+Potato - 120 BDT
+Onion - 120 BDT
+Lentil - 120 BDT
+Lentil - 120 BDT
+Onion - 120 BDT
+Potato - 120 BDT
+Egg - 120 BDT
+Salt - 30 BDT
+Oil - 120 BDT
+Suger - 80 BDT
+Rice - 50 BDT
+
+Total: 1520 BDT
+Cash Paid: 2000 BDT
+Return: 480 BDT
+======================================
+
+======================================
+Customer: Customer 1
+Rice - 50 BDT
+Rice - 50 BDT
+Rice - 50 BDT
+
+Total: 150 BDT
+Cash Paid: 1000 BDT
+Return: 850 BDT
+======================================
+
