@@ -461,35 +461,35 @@ Frame () {
 
 
 if (e.getSource() == btn1) {
-            addItem("Rice - 50 BDT", 50);
+            addItem(rice);
 }
 
 else if (e.getSource() == btn2 ){
-    addItem("Suger - 80 BDT", 80);
+    addItem(sugar);
 }
 
 else if (e.getSource() == btn3 ){
-    addItem("Oil - 120 BDT", 120);
+    addItem(oil);
 }
 
 else if (e.getSource() == btn4 ){
-    addItem("Salt - 30 BDT", 30);
+    addItem(salt);
 }
 
 else if (e.getSource() == btn5 ){
-    addItem("Egg - 120 BDT", 120);
+    addItem(egg);
 }
 
 else if (e.getSource() == btn6 ){
-    addItem("Potato - 120 BDT", 120);
+    addItem(potato);
 }
 
 else if (e.getSource() == btn7 ){
-    addItem("Onion - 120 BDT", 120);
+    addItem(onion);
 }
 
 else if (e.getSource() == btn8 ){
-    addItem("Lentil - 120 BDT", 120);
+    addItem(lentil);
 }
 
 
@@ -504,39 +504,33 @@ else if (e.getSource() == STextField) {
     String khoj = STextField.getText().trim().toLowerCase();
 
     if (khoj.contains("rice")) {
-        addItem("Rice - 50 BDT", 50);
+        addItem(rice);
     } else if (khoj.contains("suger") || khoj.contains("sugar")) {
-        addItem("Suger - 80 BDT", 80);
+        addItem(sugar);
     } else if (khoj.contains("oil")) {
-        addItem("Oil - 120 BDT", 120);
+        addItem(oil);
     } else if (khoj.contains("salt")) {
-        addItem("Salt - 30 BDT", 30);
+        addItem(salt);
     } else if (khoj.contains("egg")) {
-        addItem("Egg - 120 BDT/Dozen", 120);
+        addItem(egg);
     } else if (khoj.contains("potato")) {
-        addItem("Potato - 40 BDT/kg", 40);
+        addItem(potato);
     } else if (khoj.contains("onion")) {
-        addItem("Onion - 60 BDT/kg", 60);
+        addItem(onion);
     } else if (khoj.contains("lentil") || khoj.contains("daal")) {
-        addItem("Lentil - 90 BDT/kg", 90);
+        addItem(lentil);
     } else {
         JOptionPane.showMessageDialog(null, "Product not found!");
     }
 
     STextField.setText(""); 
 }
-
-
-
-
-
-
 }
 
 
-public void addItem(String item, int price) {
-        invoice.append(item + "\n");
-        total += price;
+public void addItem(Product product) {
+        invoice.append( product.getName() + " " + product.getPrice() + " BDT\n");
+        total += product.getPrice();
         totalLabel.setText("Total: " + total);
     }
 
@@ -566,5 +560,9 @@ public void SellTxt(String invoiceText, String customer ,int total, int cash, in
         JOptionPane.showMessageDialog(null, "Error saving invoice ");
     }
 }
+
+
+
+
 
 }
