@@ -12,18 +12,28 @@ public class Frame extends JFrame implements ActionListener  {
     JTextArea invoice;
     int total = 0;
     JTextField STextField;
-    int customerCount = 1;
-    int riceqty = 0 ;
+ 
+
+    int customerCount =1 ;
+    int riceqty=1;
+    int sugertqty=1;
+    int oilqty=1;
+    int saltqty=1;
+    int lentilqty=1;
+    int onionqty=1;
+    int potatoqty=1;
+    
+   
 
 
-    Product rice = new Product("Rice", 50);
-    Product sugar = new Product("Sugar", 80);
+    Product rice = new Product("Rice", 58);
+    Product sugar = new Product("Sugar", 50);
     Product oil = new Product("Oil", 120);
-    Product lentil = new Product("Lentil", 120);
-    Product onion = new Product("Onion", 120);
+    Product lentil = new Product("Lentil", 80);
+    Product onion = new Product("Onion", 50);
     Product salt = new Product("Salt", 30);
-    Product egg = new Product("Egg" , 120 );
-    Product potato = new Product ("Potato" , 120);
+    Product egg = new Product("Egg" , 156 );
+    Product potato = new Product ("Potato" , 40);
 
     
 Frame () {
@@ -371,21 +381,6 @@ Frame () {
 
     
 
-         
-
-
-
-
-        
-        
-     
-        
-                        
-
-
-        
-        
-        
         panel3.add(TPanel);
         panel3.add(Lpanel);
         panel3.add(Rpanel);
@@ -438,6 +433,13 @@ Frame () {
     cashField.setText("");
 
     customerCount++;
+    riceqty=1;
+    sugertqty=1;
+    oilqty=1;
+    saltqty=1;
+    lentilqty=1;
+    onionqty=1;
+    potatoqty=1;
    
 
 
@@ -452,6 +454,15 @@ Frame () {
         totalLabel.setText("Total: 0");
         returnLabel.setText("Return: 0");
         cashField.setText("");
+        riceqty=1;
+        sugertqty=1;
+        oilqty=1;
+        saltqty=1;
+        lentilqty=1;
+        onionqty=1;
+        potatoqty=1;
+
+        
 
 
     }
@@ -461,35 +472,103 @@ Frame () {
 
 
 if (e.getSource() == btn1) {
-            addItem(rice);
+
+    if(riceqty <= 5) {
+        addItem(rice);
+    riceqty++;
 }
+
+else {
+        JOptionPane.showMessageDialog(null, "Limit reached! Customer cannot buy rice more than 5 times.");
+    } 
+            
+}
+
 
 else if (e.getSource() == btn2 ){
-    addItem(sugar);
+   if(sugertqty <= 2) {
+        addItem(sugar);
+    sugertqty++;
 }
+
+else {
+        JOptionPane.showMessageDialog(null, "Limit reached! Customer cannot buy sugar more than 2 times.");
+    }
+}
+
+
 
 else if (e.getSource() == btn3 ){
-    addItem(oil);
+    if(oilqty <= 2) {
+        addItem(oil);
+    oilqty++;
 }
 
-else if (e.getSource() == btn4 ){
-    addItem(salt);
+else {
+        JOptionPane.showMessageDialog(null, "Limit reached! Customer cannot buy Oil more than 2 times.");
+    }
 }
+
+
+
+else if (e.getSource() == btn4 ){
+    if(saltqty <= 2) {
+        addItem(salt);
+    saltqty++;
+}
+
+else {
+        JOptionPane.showMessageDialog(null, "Limit reached! Customer cannot buy salt more than 2 times.");
+    }
+}
+
+
+
+
 
 else if (e.getSource() == btn5 ){
     addItem(egg);
 }
 
+
+
+
 else if (e.getSource() == btn6 ){
-    addItem(potato);
+    if(potatoqty <= 3) {
+        addItem(potato);
+    potatoqty++;
 }
+
+else {
+        JOptionPane.showMessageDialog(null, "Limit reached! Customer cannot buy potato more than 3 times.");
+    }
+}
+
+
+
 
 else if (e.getSource() == btn7 ){
-    addItem(onion);
+    if(onionqty <= 3) {
+        addItem(onion);
+    onionqty++;
 }
 
+else {
+        JOptionPane.showMessageDialog(null, "Limit reached! Customer cannot buy onion more than 3 times.");
+    }
+}
+
+
+
 else if (e.getSource() == btn8 ){
-    addItem(lentil);
+    if(lentilqty <= 3) {
+        addItem(lentil);
+    lentilqty++;
+}
+
+else {
+        JOptionPane.showMessageDialog(null, "Limit reached! Customer cannot buy lentil more than 3 times.");
+    }
 }
 
 
@@ -545,13 +624,13 @@ public void SellTxt(String invoiceText, String customer ,int total, int cash, in
         
         BufferedWriter writer = new BufferedWriter(new FileWriter("sales.txt", true));
 
-        writer.write("======================================\n");
+        writer.write("__________________________________________________\n");
         writer.write("Customer: " + customer + "\n");
         writer.write(invoiceText + "\n");
         writer.write("Total: " + total + " BDT\n");
         writer.write("Cash Paid: " + cash + " BDT\n");
         writer.write("Return: " + ret + " BDT\n");
-        writer.write("======================================\n\n");
+        writer.write("__________________________________________________\n\n");
 
         writer.close();
         JOptionPane.showMessageDialog(null, "Invoice saved to sales.txt");
