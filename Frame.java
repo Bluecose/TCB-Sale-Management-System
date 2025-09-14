@@ -45,6 +45,8 @@ Frame () {
         frame.setSize(1200,850);
         frame.setTitle("Trading Corporation of Bangladesh POS");
         frame.setLayout(new BorderLayout());
+        ImageIcon logo3 = new ImageIcon("image/tcb_logo.png");
+        frame.setIconImage(logo3.getImage());
         
         
         JPanel panel1 = new JPanel() ;
